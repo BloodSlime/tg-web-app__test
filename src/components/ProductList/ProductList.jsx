@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import "./ProductList.css"
-import ProductItem from "../ProductItem/ProductItem";
+import ProductItem from "../ProductItem/ProductItem.jsx";
 import {useTelegram} from "../../hooks/useTelegram";
 
 const products =[
@@ -39,15 +39,16 @@ const ProductList = () => {
             })
         }
     }
+
     return (
         <div className={'list'}>
-            {products.map(item => {
+            {products.map(item =>
                 <ProductItem
                     product={item}
                     onAdd={onAdd}
                     className={'item'}
                 />
-            })}
+            )}
         </div>
     );
 };
